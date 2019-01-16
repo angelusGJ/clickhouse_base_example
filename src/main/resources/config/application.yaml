@@ -1,0 +1,25 @@
+debug: true
+logging:
+   path: /tmp
+   file:
+      max-size: 10MB
+      max-history: 2
+   group:
+      tomcat: org.apache.catalina, org.apache.coyote, org.apache.tomcat            
+   level:
+      root: WARN
+      tomcat: ERROR
+      web: DEBUG
+      org.hibernate: ERROR
+      org.springframework.data: DEBUG
+spring:
+   datasource:
+      driver-class-name: ru.yandex.clickhouse.ClickHouseDriver
+      username: default
+      password: 
+      url: jdbc:clickhouse://127.0.0.1:8123
+      connectionTimeout: 67000
+      hikari:
+         connectionTimeout: 67000
+         idleTimeout: 600000
+         maxLifetime: 1800000      
